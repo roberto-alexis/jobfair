@@ -150,10 +150,10 @@
 }
 
 - (UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index {
-	CGFloat value = [self pieChart:pieChart valueForSliceAtIndex:index];
+	NSUInteger total = [self numberOfSlicesInPieChart:pieChart];
 	UIColor *startColor = [UIColor colorWithRed:85.0/255.0 green:202.0/255.0 blue:237.0/255.0 alpha:1];
-	UIColor *endColor = [UIColor colorWithRed:53.0/255.0 green:89.0/255.0 blue:232.0/255.0 alpha:1];
-	return [self colorLerpFrom:startColor to:endColor withDuration:value];
+	UIColor *endColor = [UIColor colorWithRed:63.0/255.0 green:99.0/255.0 blue:232.0/255.0 alpha:1];
+	return [self colorLerpFrom:startColor to:endColor withDuration:(float)index / (float)total];
 }
 
 - (UIColor *)colorLerpFrom:(UIColor *)start
