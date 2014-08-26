@@ -10,4 +10,12 @@
 
 @interface MMViewController : UIViewController
 
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSMutableArray *contentViewControllers;
+@property (nonatomic) int pageIndex;
+
+- (void)moveNextPage;
+- (void)moveBackPage;
+- (void)restart;
+
 @end
